@@ -1,0 +1,37 @@
+{
+	"manifest_version"       : 2,
+	"name"                   : "Ru",
+	"description"            : "Russian transliteration",
+	"version"                : "1.1",
+	"minimum_chrome_version" : "9",
+
+	"omnibox" : {
+		"keyword" : "ru"
+	},
+	
+	"permissions": [
+		"tabs",
+		"http://*/*"
+	],
+	
+	"content_scripts": [{
+		"matches" : ["http://*/*", "https://*/*"],
+		"js"      : ["jquery-1.11.1.min.js", "translit.js", "content.js"]
+	}],
+	
+	"browser_action": {
+		"default_icon": "icon19_off.png",
+		"default_popup": "popup.html"
+	},
+	
+	"icons": {
+		"16": "icon16.png",
+		"19": "icon19.png",
+		"38": "icon38.png",
+		"48": "icon48.png"
+	},
+	
+	"background": {
+		"scripts": ["translit.js", "background.js"]
+	}
+}
